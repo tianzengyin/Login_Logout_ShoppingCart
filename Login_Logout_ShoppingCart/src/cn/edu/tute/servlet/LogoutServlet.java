@@ -23,7 +23,6 @@ public class LogoutServlet extends HttpServlet {
         //request.getSession().invalidate();
         //回到登录页面
         response.sendRedirect("login/login.jsp");
-        System.out.println();
     }
 
     @Override
