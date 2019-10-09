@@ -19,8 +19,8 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //销毁session对象
-        request.getSession().setAttribute("USER_IN_SESSION",null);
-        //request.getSession().invalidate();
+        //request.getSession().setAttribute("USER_IN_SESSION",null);
+        request.getSession().invalidate();
         //回到登录页面
         response.sendRedirect("login/login.jsp");
     }
