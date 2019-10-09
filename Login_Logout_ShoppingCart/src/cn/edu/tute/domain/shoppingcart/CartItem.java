@@ -8,9 +8,13 @@ package cn.edu.tute.domain.shoppingcart;
  * @VERSION:1.0
  */
 public class CartItem {
+    //唯一的标识
     private  Long id;
+    //商品的名称
     private String name;
+    //商品的价格
     private Double price;
+    //商品的数量
     private Integer num;
 
     @Override

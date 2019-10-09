@@ -49,7 +49,14 @@ public class ShoppingCart {
         this.items = items;
     }
 
+    /**
+     * 获取商品总价
+     * @return
+     */
     public Double getTotalPrice() {
+        for (CartItem item : items) {
+            totalPrice += item.getPrice() * item.getNum();
+        }
         return totalPrice;
     }
 
