@@ -1,5 +1,6 @@
 package cn.edu.tute.service.shoppingcart;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -12,8 +13,34 @@ import java.util.List;
  */
 public class ShoppingCart {
     private  List<CartItem> items;
+    //商品总价
     private Double totalPrice;
 
+    //增加商品
+    public void save(CartItem item){
+        //如果要添加的商品在购物车中存在，就只修改它的的数量
+        for (CartItem cartItem : items) {
+            if(cartItem.getId().equals(item.getId()) ){
+                cartItem.setNum(cartItem.getNum()+item.getNum());
+                return;
+            }
+        }
+        //反之，就要添加一个新的元素
+        items.add(item);
+    }
+
+    /**
+     * 删除商品
+     */
+    public void delete(Long id){
+        Iterator<CartItem> iterator = items.iterator();
+        while (iterator.hasNext()){
+            CartItem item = iterator.next();
+            if(item.getId().equals(id) ){
+                iterator.remove();
+            }
+        }
+    }
     public List<CartItem> getItems() {
         return items;
     }
