@@ -1,4 +1,4 @@
-package cn.edu.tute.service.shoppingcart;
+package cn.edu.tute.domain.shoppingcart;
 
 /**
  * @Author:田增印
