@@ -1,5 +1,6 @@
 package cn.edu.tute.domain.shoppingcart;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,9 +13,8 @@ import java.util.List;
  * 购物车对象
  */
 public class ShoppingCart {
-    private  List<CartItem> items;
-    //商品总价
-    private Double totalPrice;
+    private  List<CartItem> items = new ArrayList<CartItem>();
+
 
     //增加商品
     public void save(CartItem item){
@@ -54,21 +54,20 @@ public class ShoppingCart {
      * @return
      */
     public Double getTotalPrice() {
+        //商品总价
+        Double totalPrice = 0.0;
         for (CartItem item : items) {
             totalPrice += item.getPrice() * item.getNum();
         }
         return totalPrice;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
+
 
     @Override
     public String toString() {
         return "ShoppingCart{" +
                 "items=" + items +
-                ", totalPrice=" + totalPrice +
                 '}';
     }
 }

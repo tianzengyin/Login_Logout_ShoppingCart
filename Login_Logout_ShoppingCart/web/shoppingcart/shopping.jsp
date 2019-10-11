@@ -12,11 +12,11 @@
 </head>
 <body>
     <h1>商品列表</h1>
-    <form action="">
+    <form action="<%=request.getContextPath()%>/shoppingCart?cmd=save" method="post">
         商品名称：<select name="name" >
-                        <option value="">电脑</option>
-                        <option value="">手机</option>
-                        <option value="">IPAD</option>
+                        <option>电脑</option>
+                        <option>手机</option>
+                        <option>IPAD</option>
                   </select> <br/>
         数量：<input type="number" name="num" /> <br/>
         <input type="submit" value="买买买"/>
