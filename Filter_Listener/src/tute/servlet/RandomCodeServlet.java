@@ -1,4 +1,4 @@
-package cn.edu.tute.servlet;
+package tute.servlet;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
