@@ -12,17 +12,13 @@
 </head>
 <body>
 
-<%
-    //登录校验
-    Object obj = request.getSession().getAttribute("USER_IN_SESSION");
-        if(obj ==null ){
-           // response.sendRedirect("/login/login.jsp");
-            request.getRequestDispatcher("/login/login.jsp").forward(request,response);
-        }
-
-%>
-欢迎:${sessionScope.USER_IN_SESSION.getUsername()} 登录
+欢迎:${sessionScope.USERNAME_IN_SESSION} 登录
 <a href="<%=request.getContextPath()%>/LogoutServlet">注销</a>
 <hr/>
+<h1>主界面</h1><br>
+<a href="<%=request.getContextPath()%>/system/f1.jsp">功能一</a>
+<a href="<%=request.getContextPath()%>/system/f2.jsp">功能二</a>
+<a href="<%=request.getContextPath()%>/system/f3.jsp">功能三</a>
+
 </body>
 </html>

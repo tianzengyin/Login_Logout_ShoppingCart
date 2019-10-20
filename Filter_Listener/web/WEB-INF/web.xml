@@ -3,12 +3,72 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <filter>
+    <!--<filter>
         <filter-name>HelloFilter</filter-name>
         <filter-class>tute.filter.HelloFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>contentType</param-name>
+            <param-value>text/html;charset=utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>force</param-name>
+            <param-value>true</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>HelloFilter</filter-name>
         <url-pattern>/*</url-pattern>
+        &lt;!&ndash;跳转到作物页面的时候执行&ndash;&gt;
+        &lt;!&ndash;<dispatcher>ERROR</dispatcher>&ndash;&gt;
+
+        &lt;!&ndash;<dispatcher>INCLUDE</dispatcher>&ndash;&gt;
+
+        &lt;!&ndash;对请求转发进行过滤&ndash;&gt;
+        &lt;!&ndash;<dispatcher>FORWARD</dispatcher>&ndash;&gt;
+
+        &lt;!&ndash;缺省值：过滤一次新的请求&ndash;&gt;
+        &lt;!&ndash;<dispatcher>REQUEST</dispatcher>&ndash;&gt;
+
+    </filter-mapping>-->
+    <!--配置全局错误页面-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+    <!--<filter>
+        <filter-name>A</filter-name>
+        <filter-class>tute.filter.AFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>A</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>B</filter-name>
+        <filter-class>tute.filter.BFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>B</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>C</filter-name>
+        <filter-class>tute.filter.CFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>C</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+    <filter>
+        <filter-name>CheckLoginFilter</filter-name>
+        <filter-class>tute.filter.CheckLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CheckLoginFilter</filter-name>
+        <url-pattern>/system/*</url-pattern>
     </filter-mapping>
 </web-app>

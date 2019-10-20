@@ -25,8 +25,7 @@ public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
+
         //验证码校验
         String randomCode = request.getParameter("randomCode");//用户填写的验证码
         //获取session中的验证码
@@ -34,21 +33,22 @@ public class LoginServlet extends HttpServlet {
          //将用户填写的验证码和session中的作对比
         if( !randomCode_in_session.equals(randomCode)){
             request.setAttribute("errorCodeMsg","验证码错误");
-            request.getRequestDispatcher("/login1.jsp").forward(request,response);
+            request.getRequestDispatcher("/login/login.jsp").forward(request,response);
             return;
         }
 
         String userName = request.getParameter("username");
         String uesrPwd = request.getParameter("password");
 
+
         IUserDAO iUserDAO = new UserDAOImpl();
         User user = iUserDAO.checkLogin(userName, uesrPwd);
 
         if(null != user) {
             //将登录的用户信息放到session中
-            request.getSession().setAttribute("USER_IN_SESSION",user);
-            request.getRequestDispatcher("/login/success.jsp").forward(request,response);
-
+            request.getSession().setAttribute("USERNAME_IN_SESSION",user.getUsername());
+            //request.getRequestDispatcher("/login/success.jsp").forward(request,response);
+            response.sendRedirect(request.getContextPath()+"/system/success.jsp");
         }else {
             request.setAttribute("errorPasswordMsg","用户名或密码错误");
             request.getRequestDispatcher("/login/login.jsp").forward(request,response);
