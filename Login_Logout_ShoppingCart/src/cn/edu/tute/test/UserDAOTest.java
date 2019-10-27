@@ -1,7 +1,7 @@
 package cn.edu.tute.test;
 
 import cn.edu.tute.dao.IUserDAO;
-import cn.edu.tute.dao.impl.UserDAOImpl;
+import cn.edu.tute.dao.UserDAOImpl;
 import org.junit.Test;
 
 /**

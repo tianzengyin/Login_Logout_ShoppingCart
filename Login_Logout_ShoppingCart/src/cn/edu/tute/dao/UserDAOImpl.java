@@ -1,6 +1,5 @@
-package cn.edu.tute.dao.impl;
+package cn.edu.tute.dao;
 
-import cn.edu.tute.dao.IUserDAO;
 import cn.edu.tute.domain.User;
 import cn.edu.tute.utils.ConnectionUtil;
 

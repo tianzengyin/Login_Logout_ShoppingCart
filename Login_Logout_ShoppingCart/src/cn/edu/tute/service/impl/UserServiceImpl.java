@@ -1,7 +1,7 @@
 package cn.edu.tute.service.impl;
 
 import cn.edu.tute.dao.IUserDAO;
-import cn.edu.tute.dao.impl.UserDAOImpl;
+import cn.edu.tute.dao.UserDAOImpl;
 import cn.edu.tute.domain.User;
 import cn.edu.tute.service.UserService;
 /**
